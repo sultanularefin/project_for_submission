@@ -47,9 +47,7 @@ body {
 
 }
 
-/*.header a:focus, .header a:active {*/
-/*    border-color: transparent;*/
-/*}*/
+
 
 .header a.active {
     background-color: dodgerblue;
