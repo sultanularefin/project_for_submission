@@ -1,6 +1,7 @@
 .belly {
     display: flex;
     justify-content: flex-start;
+    flex-direction: row;
     /*space-between;*/
     /*padding: 2em;*/
     padding: 0px 10px;
@@ -10,14 +11,14 @@
 }
 
 .belly-section-left-index {
-    flex: 1;
+    flex: 1.5;
     padding: 1em;
 }
 
 
 
 .belly-section-detail {
-    flex: 9;
+    flex:8.5;
     padding: 1em;
     background-color: tomato;
 }
