@@ -37,8 +37,14 @@
         <a class="active" href="./index.html">Home</a>
         <a href="#footer">Contact</a>
         <a href="#about">About</a>
-        <a href="./register.html">Account</a>
-        <a href="#about">Log out</a>
+        <a id="account_button" style="display: none"
+           href="./register.html">Account</a>
+        <a id="logout_button" onclick="logout_button_pressed()" style="display: none"> Log out</a>
+
+
+
+        <!--<?php echo $user_password; ?>-->
+      <!--  <a href="#about">Log out</a>-->
     </div>
 </div>
 
@@ -75,12 +81,6 @@
 
 </div>
 <!--sub header ends here-->
-<div style="padding-left:20px">
-    <h1>Responsive Header</h1>
-    <p>Resize the browser window to see the effect.</p>
-    <p>Some content..</p>
-</div>
-
 
 
 

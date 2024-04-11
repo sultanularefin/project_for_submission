@@ -21,21 +21,77 @@ const loadPosts = async(searchText) =>{
     const postArr= data.posts;
     // console.log(postArr);    //all posts array
     displayPosts(postArr);
-    
+
 }
 
+const logout_button_pressed = ()=>{
+
+    console.log("at <<logout_button_pressed>>");
+
+}
+const check_local_storage = ()=>{
+
+
+    if((typeof window !== "undefined")
+        &&
+        (window.localStorage)
+        && (localStorage.getItem('user')!==null) &&
+        (localStorage.getItem('user')!== undefined)) {
+        const user_data = JSON.parse(localStorage.getItem('user'));
+
+        console.log("user_data: ",user_data);
+
+        if(user_data.email.trim()!==""){
+
+            /*<a href="#about">Log out</a>*/
+
+
+            const account_BTN= document.getElementById("account_button");
+
+            // to clear the previous search
+            account_BTN.textContent="Log out";
+
+            account_BTN.style.display = "inline";
+
+
+
+
+            /*  account_button
+              logout_button*/
+
+
+
+        }
+
+
+    }else{
+        console.log("user not found!");
+        // const cardContainer= document.getElementById("account_status");
+        const delete_BTN= document.getElementById("logout_button");
+
+
+        // to clear the previous search
+        delete_BTN.textContent="Log out";
+        delete_BTN.style.display = "inline";
+
+    }
+}
 
 // load the default posts before search 
 const loadAllPosts = async () => {
-  const url = "https://openapi.programming-hero.com/api/retro-forum/posts";
-  const res = await fetch(url);
-  const data = await res.json();
+    const url = "https://openapi.programming-hero.com/api/retro-forum/posts";
+    const res = await fetch(url);
+    const data = await res.json();
 
-  const postArr = data.posts;
-  // displayPosts(postArr);
-  loadLatestPosts();
+    const postArr = data.posts;
+    // displayPosts(postArr);
+    loadLatestPosts();
+
+    check_local_storage();
 }
 loadAllPosts();
+
+
 
 
 
@@ -43,14 +99,14 @@ loadAllPosts();
 let count = 0;
 
 // displaying the posts 
- const  displayPosts = (posts) =>{
+const  displayPosts = (posts) =>{
 
 
     // 1: get the container Element
     const cardContainer= document.getElementById("card-container");
 
     // to clear the previous search
-    cardContainer.textContent=''; 
+    cardContainer.textContent='';
 
     posts.forEach(post =>{
         // console.log(post);
@@ -103,96 +159,96 @@ let count = 0;
                 </div>
               </div>`;
 
-              // change the color of status on the basis of active 
-              const activeStat=post.isActive;
-              console.log(activeStat);
-              const activeBtn = postCard.querySelector('.circle');
-              if (!activeStat) { 
-                activeBtn.classList.replace('bg-green-500', 'bg-red-600');
-            }
+        // change the color of status on the basis of active
+        const activeStat=post.isActive;
+        console.log(activeStat);
+        const activeBtn = postCard.querySelector('.circle');
+        if (!activeStat) {
+            activeBtn.classList.replace('bg-green-500', 'bg-red-600');
+        }
 
 
-              // 4: appendChild
-              cardContainer.appendChild(postCard);
+        // 4: appendChild
+        cardContainer.appendChild(postCard);
 
-    
 
-    const button = document.createElement('button');
-    
-    button.onclick = () => markRead(post.title, post.view_count); 
-    button.title = `${post.title}`;
-    button.classList = "btn";
-    button.innerHTML = `<img src="./images/email.png" alt="">`;
-    cardContainer.appendChild(postCard);      
-        
+
+        const button = document.createElement('button');
+
+        button.onclick = () => markRead(post.title, post.view_count);
+        button.title = `${post.title}`;
+        button.classList = "btn";
+        button.innerHTML = `<img src="./images/email.png" alt="">`;
+        cardContainer.appendChild(postCard);
+
 
     });
- }
+}
 
 const markRead = (title, views) => {
 
-  // update the count everytime the button is clicked
-  count=count+1;
-  const readCount = document.getElementById('readCount');
-  readCount.innerText = count; 
+    // update the count everytime the button is clicked
+    count=count+1;
+    const readCount = document.getElementById('readCount');
+    readCount.innerText = count;
 
 // the title and view is appended everytime the button is clicked
-  const viewContainer = document.getElementById("view-container");
-  const viewCard = document.createElement('div');
-  viewCard.classList = `bg-white rounded-xl p-2 lg:p-4 my-4 flex flex-row justify-between`;
+    const viewContainer = document.getElementById("view-container");
+    const viewCard = document.createElement('div');
+    viewCard.classList = `bg-white rounded-xl p-2 lg:p-4 my-4 flex flex-row justify-between`;
 
-  viewCard.innerHTML = `
+    viewCard.innerHTML = `
       <p class="text-lg font-bold">${title}</p>
       <div class="flex flex-row justify-center items-center">
           <img src="./images/eye.png" alt="">
           <p class="text-lg font-bold">${views}</p>
       </div>`;
 
-  viewContainer.appendChild(viewCard);
+    viewContainer.appendChild(viewCard);
 }
 
 // handel search 
 
 const handleSearch = () =>{
-  const searchField=document.getElementById('searchField');
-  const searchText=searchField.value;
-  loadPosts(searchText);
+    const searchField=document.getElementById('searchField');
+    const searchText=searchField.value;
+    loadPosts(searchText);
 
-   // show loading dots
-   const loadingDots = document.querySelector('.loading-dots');
-   loadingDots.style.display = 'inline-block';
- 
-   // hide the cards container
-   const cardContainer = document.getElementById('card-container');
-   cardContainer.style.display = 'none';
+    // show loading dots
+    const loadingDots = document.querySelector('.loading-dots');
+    loadingDots.style.display = 'inline-block';
 
- 
-   // simulate loading for 2 seconds
-   setTimeout(async () => {
-     
-     await loadPosts(searchText);
- 
-     // Hide loading dots
-     loadingDots.style.display = 'none';
- 
-     // Show the cards container
-     cardContainer.style.display = 'block';
-    
-   }, 2000);
+    // hide the cards container
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.style.display = 'none';
+
+
+    // simulate loading for 2 seconds
+    setTimeout(async () => {
+
+        await loadPosts(searchText);
+
+        // Hide loading dots
+        loadingDots.style.display = 'none';
+
+        // Show the cards container
+        cardContainer.style.display = 'block';
+
+    }, 2000);
 }
 
 // latest section load data 
 const loadLatestPosts = async () => {
-  const url = "https://openapi.programming-hero.com/api/retro-forum/latest-posts";
-  const res = await fetch(url);
-  const data = await res.json();
+    const url = "https://openapi.programming-hero.com/api/retro-forum/latest-posts";
+    const res = await fetch(url);
+    const data = await res.json();
 
-  console.log(data);
+    console.log(data);
 
-  data.forEach(singleData =>{
-    const latestCard=document.createElement('div');
-    
-    latestCard.innerHTML = `
+    data.forEach(singleData =>{
+        const latestCard=document.createElement('div');
+
+        latestCard.innerHTML = `
     <div class="card w-full bg-white border-[#12132D26] shadow-xl">
     <figure class="px-10 pt-10">
       <img src="${singleData.cover_image}" class="rounded-xl" />
@@ -220,9 +276,9 @@ const loadLatestPosts = async () => {
   </div>
     
     `;
-  /*  const latestContainer= document.getElementById('latestContainer');
-    latestContainer.appendChild(latestCard);*/
+        /*  const latestContainer= document.getElementById('latestContainer');
+          latestContainer.appendChild(latestCard);*/
 
-  });
-  
+    });
+
 }
