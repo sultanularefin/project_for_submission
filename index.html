@@ -38,7 +38,15 @@
         <a href="#footer">Contact</a>
         <a href="#about">About</a>
         <a href="./register.html">Account</a>
-        <a href="#about">Log out</a>
+
+        <script>{
+            ((typeof window !== "undefined") && (window.localStorage) && localStorage.getItem('user'))
+                ? <a href="#about">Log out</a> :
+           null
+        }</script>
+
+        <!--<?php echo $user_password; ?>-->
+      <!--  <a href="#about">Log out</a>-->
     </div>
 </div>
 
@@ -75,12 +83,6 @@
 
 </div>
 <!--sub header ends here-->
-<div style="padding-left:20px">
-    <h1>Responsive Header</h1>
-    <p>Resize the browser window to see the effect.</p>
-    <p>Some content..</p>
-</div>
-
 
 
 
