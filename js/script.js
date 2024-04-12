@@ -48,10 +48,21 @@ const check_local_storage = ()=>{
 
             const account_BTN= document.getElementById("account_button");
 
-            // to clear the previous search
-            account_BTN.textContent="Log out";
+
+
 
             account_BTN.style.display = "inline";
+
+            console.log("account_BTN inline");
+
+
+
+            const logout_BTN= document.getElementById("logout_button");
+
+            console.log("logout_BTN inline");
+            // to clear the previous search
+            // delete_BTN.textContent="Log out";
+            logout_BTN.style.display = "inline";
 
 
 
@@ -67,12 +78,14 @@ const check_local_storage = ()=>{
     }else{
         console.log("user not found!");
         // const cardContainer= document.getElementById("account_status");
-        const delete_BTN= document.getElementById("logout_button");
+
+        const login_BTN= document.getElementById("login_button");
 
 
+        console.log("login_BTN inline");
         // to clear the previous search
-        delete_BTN.textContent="Log out";
-        delete_BTN.style.display = "inline";
+        // delete_BTN.textContent="Log out";
+        login_BTN.style.display = "inline";
 
     }
 }
