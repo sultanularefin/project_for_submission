@@ -11,3 +11,16 @@ footer {
     flex: 1;
     padding: 1em;
 }
+
+.footer-section-column {
+    flex: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #139FD7;
+}

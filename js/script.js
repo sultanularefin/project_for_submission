@@ -27,7 +27,17 @@ const loadPosts = async(searchText) =>{
 const logout_button_pressed = ()=>{
 
     console.log("at <<logout_button_pressed>>");
+    if((typeof window !== "undefined")
+        &&
+        (window.localStorage)){
+        localStorage.removeItem('user');
 
+    }
+
+    else{
+
+        console.log("at else of logout_button_pressed");
+    }
 }
 const check_local_storage = ()=>{
 

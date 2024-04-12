@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 
     <!-- css link  -->
-    <link rel="stylesheet" href="style.css">
+<!--    <link rel="stylesheet" href="style.css">-->
+
+
 
 
     <!-- daisyUI cdn  -->
@@ -23,7 +25,8 @@
 
     <link rel="stylesheet" href="./css/header.module.css">
     <link rel="stylesheet" href="./css/footer.module.css">
-    <link rel="stylesheet" href="./css/body1.module.css">
+    <link rel="stylesheet" href="./css/body_login.module.css" />
+<!--    <link rel="stylesheet" href="./css/body1.module.css">-->
 
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"/>
 -->
@@ -35,20 +38,14 @@
     <a href="#default" class="logo">Local Super Shop</a>
     <div class="header-right">
         <a class="active" href="./index.html">Home</a>
-        <a href="./contact_us.html">Contact</a>
-        <a href="./about_us.html">About</a>
+        <a href="#footer">Contact</a>
+        <a href="#about">About</a>
 
         <a id="account_button" style="display: none"
            href="./profile.html">Account</a>
 
-        <!--<a id="login_button" style="display: none"
-           href="./register.html">Log in</a>-->
-
-
-
-
         <a id="login_button" style="display: none"
-           href="./login.html">Log in</a>
+           href="./register.html">Log in</a>
 
 
         <a id="logout_button" onclick="logout_button_pressed()" style="display: none"> Log out</a>
@@ -60,40 +57,33 @@
 
 
 
-<!--sub header begins here-->
-<div class="belly">
-    <div class="belly-section-left-index">
-        <ul>
-
-            <li class="active">
-                <a class="hide-overflow" href="#id_arefinuapbd_pythonanywhere_com" aria-expanded="true">
-                    arefinUAPbd.pythonanywhere.com
-                </a>
-            </li>
 
 
 
-            <li>
-                <a id="id_new_webapp_link" href="#id_new_webapp_tab">
-                    <i class="glyphicon glyphicon-plus-sign"></i>
-                    Add a new web app
-                </a>
-            </li>
+
+<div class="container">
 
 
-        </ul>
+
+
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="name"/>
+                <input type="password" placeholder="password"/>
+                <input type="text" placeholder="email address"/>
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            <form class="login-form">
+                <input type="text" placeholder="username"/>
+                <input type="password" placeholder="password"/>
+                <button>login</button>
+                <p class="message">Not registered? <a href="./register.html">Create an account</a></p>
+            </form>
+        </div>
     </div>
-
-    <div class="belly-section-detail">
-
-        <p>ddd</p>
-    </div>
-
 </div>
-<!--sub header ends here-->
-
-
-
 
 
 
@@ -107,24 +97,12 @@
 
 <footer>
     <div class="footer-section">
-        <h3><a href="./about_us.html"
-               target="_blank" rel="noopener">About Us</a>
-        </h3>
-        <p>We are an ecommerce site in your area.</p>
-
-        <span>
-            <p>&copy; 2024 "Local Super Shop". All rights reserved.</p>
-        </span>
+        <h3>About Us</h3>
+        <p>Information about your company.</p>
     </div>
     <div class="footer-section">
         <h3>Services</h3>
-        <h4>Service we offer are listed below</h4>
-        <ul>
-            <li>We display very limited number of items</li>
-            <li>view their details</li>
-            <li>Add item to favorite</li>
-            <li>Add item to cart</li>
-        </ul>
+        <p>The services you offer.</p>
     </div>
     <div class="footer-section">
 
@@ -132,32 +110,21 @@
             <h3><a href="./contact_us.html"
                    target="_blank" rel="noopener">Contact Us</a></h3>
 
-
-
             <h3><a href="./terms_and_conditions.html"
                    target="_blank" rel="noopener">Terms And Conditions</a></h3>
-
-
 
             <h3><a href="./privacy_policy.html"
                    target="_blank" rel="noopener">Privacy Policy</a></h3>
 
         </div>
 
-
-
     </div>
-
-
-
-
 </footer>
 
 
 
-
-
-
 <script src="./js/script.js"></script>
+<script src="./js/login_script.js"></script>
+
 </body>
 </html>

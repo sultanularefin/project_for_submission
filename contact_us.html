@@ -8,13 +8,6 @@
     <title>Random Blogs</title>
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 
-    <!-- css link  -->
-    <link rel="stylesheet" href="style.css">
-
-
-    <!-- daisyUI cdn  -->
-    <!--    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />-->
-    <!--<script src="https://cdn.tailwindcss.com"></script>-->
 
     <!-- google font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,32 +16,27 @@
 
     <link rel="stylesheet" href="./css/header.module.css">
     <link rel="stylesheet" href="./css/footer.module.css">
-    <link rel="stylesheet" href="./css/body1.module.css">
+    <!--<link rel="stylesheet" href="./css/body_login.module.css" />-->
+    <link rel="stylesheet" href="./css/body_privacy_policy.module.css">
 
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"/>
 -->
 </head>
-<body class="font-mulish">
+<body>
 
 
 <div class="header">
     <a href="#default" class="logo">Local Super Shop</a>
     <div class="header-right">
         <a class="active" href="./index.html">Home</a>
-        <a href="./contact_us.html">Contact</a>
-        <a href="./about_us.html">About</a>
+        <a href="#footer">Contact</a>
+        <a href="#about">About</a>
 
         <a id="account_button" style="display: none"
            href="./profile.html">Account</a>
 
-        <!--<a id="login_button" style="display: none"
-           href="./register.html">Log in</a>-->
-
-
-
-
         <a id="login_button" style="display: none"
-           href="./login.html">Log in</a>
+           href="./register.html">Log in</a>
 
 
         <a id="logout_button" onclick="logout_button_pressed()" style="display: none"> Log out</a>
@@ -60,39 +48,36 @@
 
 
 
-<!--sub header begins here-->
-<div class="belly">
-    <div class="belly-section-left-index">
-        <ul>
-
-            <li class="active">
-                <a class="hide-overflow" href="#id_arefinuapbd_pythonanywhere_com" aria-expanded="true">
-                    arefinUAPbd.pythonanywhere.com
-                </a>
-            </li>
 
 
 
-            <li>
-                <a id="id_new_webapp_link" href="#id_new_webapp_tab">
-                    <i class="glyphicon glyphicon-plus-sign"></i>
-                    Add a new web app
-                </a>
-            </li>
+
+<div class="container">
 
 
-        </ul>
+
+    <h1>Contact Us !</h1>
+    <h2 style="text-align: center;">Welcome to <span id="W_Name">"Local Super Shop"</span>!</h2>
+
+    <p style="font-size: 17px;">Please email us if you have any queries about the site, advertising, or anything else.</p>
+
+    <div style="text-align: center;">
+
+        <img alt="contact-us" height="87" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcLPYLvBhQspUwGqwYdt1VcsaLeNn5tGh2EycKOIFQJN3UbGNdtuxqjZyArvangz-kgxJPl_li2g2T0G2ZvsjC7YDC6mbqPaG9dSw1uzK-r6ekNQfcTzM-bM7CKnnygPDhFNZ-E4Gipqo/w320-h87-rw/email-us-1805514__480.webp" width="320">
+
+        <p style="margin-left: 25%;"><i class="fas fa-envelope-open-text" style="color: #2c3e50; font-size: 20px;"></i> <b><i> <span id="W_Email"><a href="mailto:fatemaaktergtx23@gmail.com">fatemaaktergtx23@gmail.com</a></span></i></b><br>
+
+            <i class="fab fa-whatsapp-square" style="color: #3edc81; font-size: 20px;"></i> <b><span id="W_whatsapp"><a href="tel:+8801611891030">+8801611891030</a></span></b><br></p>
+
+        <h3 style="color: #3e005d;">We will respond you as soon as possible...!</h3>
+        <p style="color: #3e005d; text-align: center;">Thank you for contacting us! <br><b>Have a great day</b></p>
+        <span style="font-size: 1px; opacity: 0;">This page is generated with the help of <a href="https://www.blogearns.com/2021/06/free-contact-us-page-generator.html" style="color: inherit;">Contact Us Page Generator</a></span>
     </div>
 
-    <div class="belly-section-detail">
 
-        <p>ddd</p>
-    </div>
+
 
 </div>
-<!--sub header ends here-->
-
-
 
 
 
@@ -107,24 +92,12 @@
 
 <footer>
     <div class="footer-section">
-        <h3><a href="./about_us.html"
-               target="_blank" rel="noopener">About Us</a>
-        </h3>
-        <p>We are an ecommerce site in your area.</p>
-
-        <span>
-            <p>&copy; 2024 "Local Super Shop". All rights reserved.</p>
-        </span>
+        <h3>About Us</h3>
+        <p>Information about your company.</p>
     </div>
     <div class="footer-section">
         <h3>Services</h3>
-        <h4>Service we offer are listed below</h4>
-        <ul>
-            <li>We display very limited number of items</li>
-            <li>view their details</li>
-            <li>Add item to favorite</li>
-            <li>Add item to cart</li>
-        </ul>
+        <p>The services you offer.</p>
     </div>
     <div class="footer-section">
 
@@ -147,17 +120,13 @@
 
 
     </div>
-
-
-
-
 </footer>
 
 
 
 
-
-
 <script src="./js/script.js"></script>
+<script src="./js/login_script.js"></script>
+
 </body>
 </html>
