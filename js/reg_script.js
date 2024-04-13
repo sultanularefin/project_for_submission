@@ -145,4 +145,11 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('user', JSON.stringify(driver_vault));
 
     }
+
+
+    // Simulate a mouse click:
+window.location.href = "./index.html";
+
+// Simulate an HTTP redirect:
+window.location.replace("./index.html");
 });
