@@ -27,9 +27,16 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    /*display: flex;*/
     margin: auto;
     text-align: center;
     font-family: arial;
+}
+
+.card p{
+    text-align: left;
+    padding:5px 10px;
+    /*font-family: arial;*/
 }
 
 .title {

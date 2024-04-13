@@ -26,22 +26,22 @@
 
 
 <div class="header">
-    <a href="#default" class="logo">Local Super Shop</a>
+    <a href="./index.html" class="logo">Local Super Shop</a>
     <div class="header-right">
-        <a class="active" href="./index.html">Home</a>
-        <a href="#footer">Contact</a>
-        <a href="#about">About</a>
+        <a href="./index.html">Home</a>
+        <a class="active"  href="./contact_us.html">Contact</a>
+        <a href="./about_us.html">About</a>
 
         <a id="account_button" style="display: none"
            href="./profile.html">Account</a>
 
-        <a id="login_button" style="display: none"
-           href="./register.html">Log in</a>
+        <!--<a id="login_button" style="display: none"
+           href="./register.html">Log in</a>-->
 
+        <a id="login_button" style="display: none"
+           href="./login.html">Log in</a>
 
         <a id="logout_button" onclick="logout_button_pressed()" style="display: none"> Log out</a>
-
-
 
     </div>
 </div>
@@ -89,15 +89,26 @@
 
 
 
-
 <footer>
     <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Information about your company.</p>
+        <h3><a href="./about_us.html"
+               target="_blank" rel="noopener">About Us</a>
+        </h3>
+        <p>We are an ecommerce site in your area.</p>
+
+        <span>
+            <p>&copy; 2024 "Local Super Shop". All rights reserved.</p>
+        </span>
     </div>
     <div class="footer-section">
         <h3>Services</h3>
-        <p>The services you offer.</p>
+        <h4>Service we offer are listed below</h4>
+        <ul>
+            <li>We display very limited number of items</li>
+            <li>view their details</li>
+            <li>Add item to favorite</li>
+            <li>Add item to cart</li>
+        </ul>
     </div>
     <div class="footer-section">
 
@@ -120,6 +131,10 @@
 
 
     </div>
+
+
+
+
 </footer>
 
 

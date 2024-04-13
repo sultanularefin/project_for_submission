@@ -94,6 +94,8 @@ form.addEventListener('submit', function(e) {
     let email_check=0;
     let pw_check=0;
 
+    // console.log("e: ",e);
+
 
 
     if(!(checkRequired_false([username, email, password, password2]))){
@@ -111,10 +113,13 @@ form.addEventListener('submit', function(e) {
 
 
 
+    const gender= genderSelect.value;
     console.log("username",username.value);
     console.log("email",email.value);
     console.log("password",password.value);
     console.log("password2",password2.value);
+    console.log("gender",gender);
+
 
 
     console.log("name_check",name_check);
@@ -130,7 +135,9 @@ form.addEventListener('submit', function(e) {
 
     const driver_vault = {
         password: password.value,
-        email: email.value
+        email: email.value,
+        name: username.value,
+        gender: gender,
     };
 
 

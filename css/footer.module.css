@@ -5,6 +5,8 @@ footer {
     padding: 2em;
     background-color: #333;
     color: #fff;
+    /*height: 17vh;*/
+    /*overflow-y: inherit;*/
 }
 
 .footer-section {

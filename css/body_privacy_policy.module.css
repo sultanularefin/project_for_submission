@@ -15,14 +15,12 @@
 /*@import url(https://fonts.googleapis.com/css?family=Roboto:300);*/
 
 .container {
-
-.
     height: 80vh;
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
     /*background-color: #affccd;*/
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -36,7 +34,21 @@
     line-height: 21px;
     letter-spacing: 1px;
 
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
 }
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+/*.container {
+    -ms-overflow-style: none;  !* IE and Edge *!
+    scrollbar-width: none;  !* Firefox *!
+}*/
 
 
 
@@ -50,5 +62,7 @@ body {
     /*font-family: "Roboto", sans-serif;*/
     /*-webkit-font-smoothing: antialiased;*/
     /*-moz-osx-font-smoothing: grayscale;*/
+
+    /*height: 100vh;*/
 }
 
