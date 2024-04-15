@@ -102,22 +102,31 @@ searchInput.addEventListener('input', filterProducts);
 function createProductElement(product) {
     const productEl = document.createElement('div');
 
-    productEl.className = 'item space-y-2';
+    // productEl.className = 'item space-y-2';
+
+    productEl.style="height: 250px; marginTop:0.5rem; "
+     // "marginTop":"0.5rem", "height":"250px"}
 
     productEl.innerHTML = `<div
-  class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border"
+style="display:flex;height:250px; overflow:hidden; position:relative; justifyContent: center; borderWidth: 1px; backgroundColor : #F3F4F6; cursor : pointer;"}
 >
   <img
     src="${product.url}"
     alt="${product.name}"
-    class="w-full h-full object-cover"
+  
+    style="objectFit:cover; width:100%; height: 100%;"}
   />
-  <span
-    class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0"
+  <span 
+    // class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0"
+    style="position:absolute; right:0; bottom:0;left:0; paddingTop:0.5rem; paddingBottom: 0.5rem; textAlign:center; color :#ffffff; backgroundColor:#000000; transitionProperty:background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; transitionTimingFunction:cubic-bezier(0.4, 0, 0.2, 1);transitionDuration:300ms; --transform-translate-y:100%;"}
     >Add To Cart</span
   >
 </div>
-<p class="text-xl">${product.name}</p>
+<p
+ // class="text-xl"
+ style={"fontSize":"1.25rem","lineHeight":"1.75rem"}
+ >
+${product.name}</p>
 <strong>$${product.price.toLocaleString()}</strong>`;
 
     productEl.querySelector('.status').addEventListener('click', addToCart);
