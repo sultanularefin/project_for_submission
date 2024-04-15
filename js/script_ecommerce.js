@@ -162,16 +162,20 @@ function addToCart(e) {
         // Remove from cart
         statusEl.classList.remove('added');
         statusEl.innerText = 'Add To Cart';
-        statusEl.classList.remove('bg-red-600');
-        statusEl.classList.add('bg-gray-800');
+        // statusEl.classList.remove('bg-red-600');
+        statusEl.classList.remove("isolated_item_style_bg_red_600");
+
+        statusEl.classList.add("isolated_item_style_bg_gray_800");
 
         cartItemCount--;
     } else {
         // Add to cart
         statusEl.classList.add('added');
         statusEl.innerText = 'Remove From Cart';
-        statusEl.classList.remove('bg-gray-800');
-        statusEl.classList.add('bg-red-600');
+       /* statusEl.classList.remove('bg-gray-800');
+        statusEl.classList.add('bg-red-600');*/
+        statusEl.classList.remove("isolated_item_style_bg_gray_800");
+        statusEl.classList.add("isolated_item_style_bg_red_600");
 
         cartItemCount++;
     }
@@ -201,9 +205,13 @@ function filterProducts() {
 
         // Show or hide product based on matches
         if (matchesSearchTerm && isInCheckedCategory) {
-            productEl.classList.remove('hidden');
+            // productEl.classList.remove('hidden');
+
+            productEl.classList.remove('isolated_item_style_hidden');
+
         } else {
-            productEl.classList.add('hidden');
+            // productEl.classList.add('hidden');
+            productEl.classList.add('isolated_item_style_hidden');
         }
     });
 }

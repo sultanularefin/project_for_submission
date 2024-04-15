@@ -4,17 +4,19 @@
 
 .root_container {
     height: 80vh;
-    padding: 20px 40px;
+    padding: 0px 20px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border-radius: 5px;
+    /*border-radius: 0px;*/
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     margin: auto;
     line-height: 21px;
     letter-spacing: 1px;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
+    /*padding: 50px;*/
 
 }
 
@@ -24,12 +26,26 @@
 
 /*ecommerce_container*/
 .root_container > nav {
-    padding: 1rem;
+    /*padding: 1rem;
     margin-bottom: 1.5rem;
-    background-color: #111827;
+
+    position: sticky;
+    top: 0;
+
+    background-color: cornflowerblue;
+
+    z-index: 5;*/
 
 
-/*"padding":"1rem","marginBottom":"1.5rem","backgroundColor":"#111827"*/
+
+    position: sticky;
+    top: 0;
+    background-color: cornflowerblue;
+    z-index: 1;
+
+
+
+    /*"padding":"1rem","marginBottom":"1.5rem","backgroundColor":"#111827"*/
 }
 
 
@@ -39,15 +55,35 @@
     /*none*/
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+
     align-items: center;
-    max-width: 72rem;
+    width: 300px;
+    min-width: 300px;
+    background-color: greenyellow;
+    position: absolute;
+    left:20px;
+
+    /*gap: 2rem;*/
+    /*max-width: 72rem;*/
+
 }
 
 @media (min-width: 640px) {
 
     .root_container > nav > .product_search_container {
         flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        align-content: center;
+        align-self: center;
+        width: 360px;
+        background-color: greenyellow;
+        position: absolute;
+        left:calc(30%);
+
+        /*margin:auto;*/
     }
 }
 
@@ -56,34 +92,33 @@
 .root_container> nav > .product_search_container > .input_wrapper {
     position:relative;
     width: 100%;
+    margin: auto;
 }
 
 
 .root_container> nav > .product_search_container > .input_wrapper > .input_box {
-/*padding:0.5rem;
-paddingLeft:2.5rem;
-borderRadius:9999px;
-backgroundColor:#374151;
-transitionProperty:background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
-transitionTimingFunction":"cubic-bezier(0.4, 0, 0.2, 1)",
-transitionDuration":"300ms"*/
 
+
+    
     padding: 0.5rem;
     padding-left: 2.5rem;
-    border-radius: 9999px;
-    background-color: #374151;
+    border-radius: 20px;
+
     transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
+    /*width: 260px;*/
+    /* margin: auto; */
+
 
 }
 
 .root_container> nav > .product_search_container > .input_wrapper >.input_wrapper_svg {
-/*"position":"absolute","left":"0.5rem","top":"50%"*/
+    /*"position":"absolute","left":"0.5rem","top":"50%"*/
 
     position: absolute;
     left: 0.5rem;
-    top: 50%;
+    /*top: 10%;*/
 
 
 
@@ -114,8 +149,9 @@ transitionDuration":"300ms"*/
 @media (min-width: 768px) {
     .root_container > main .left_index_root_div{
 
-    max-width: 10rem;
-}
+        max-width: 13rem;
+
+    }
 }
 
 
@@ -127,6 +163,7 @@ transitionDuration":"300ms"*/
     place-content: center;
     width: 100%;
     max-width: 56rem;
+
 }
 
 @media (min-width: 640px) {
@@ -138,15 +175,16 @@ transitionDuration":"300ms"*/
 
 @media (min-width: 1280px) {
     .root_container > main > .product_wrapper {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        /*height: 140vh;*/
 
 
-}
+    }
 
 }
 
 .single_item_outer_div{
-margin-top: 0.5rem;
+    margin-top: 0.5rem;
     /*margin-top: 0.5rem;*/
 
 }
@@ -167,14 +205,14 @@ margin-top: 0.5rem;
     background-color: #F3F4F6;
     cursor: pointer;
 
-  /*  display: flex;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    border-width: 1px;
-    background-color: #F3F4F6;
-    cursor: pointer;
-*/
+    /*  display: flex;
+      overflow: hidden;
+      position: relative;
+      justify-content: center;
+      border-width: 1px;
+      background-color: #F3F4F6;
+      cursor: pointer;
+  */
 
 
 
@@ -230,6 +268,29 @@ margin-top: 0.5rem;
     --transform-translate-y: 100%;
 
 }
+
+
+.isolated_item_style_bg_red_600{
+    background-color: #DC2626;
+}
+
+.isolated_item_style_bg_gray_800 {
+    background-color: #1F2937;
+}
+
+
+.isolated_item_style_hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 
 
 
