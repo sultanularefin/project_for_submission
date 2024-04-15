@@ -100,25 +100,6 @@ searchInput.addEventListener('input', filterProducts);
 
 // Create product element
 function createProductElement(product) {
-/*    const productEl = document.createElement('div');
-    productEl.innerHTML = `<div>
-  <img
-    src="${product.url}"
-    alt="${product.name}"
-  
-  />
-  <span>Add To Cart</span>
-</div>
-<p
- // class="text-xl"
- style={"fontSize":"1.25rem","lineHeight":"1.75rem"}
- >
-${product.name}</p>
-<strong>$${product.price.toLocaleString()}</strong>`;
-
-    productEl.querySelector('.status').addEventListener('click', addToCart);
-
-    return productEl;*/
 
 
 
@@ -126,10 +107,14 @@ ${product.name}</p>
 
     // productEl.className = 'item space-y-2';
     // productEl.className= "single_item_outer_div"
-
-    productEl.style= "marginTop:0.5rem"
+    /*border-width: 1px;
+    border-width: 4px;*/
+    // "marginTop":"0.5rem"
+    productEl.className = 'item';
+    productEl.style= "marginTop:0.1rem;"
     productEl.innerHTML = `<div
-  class="single_item"
+    className="group"
+   class="single_item"
 >
   <img
     src="${product.url}"
@@ -137,8 +122,8 @@ ${product.name}</p>
     class="image_style"
   />
   <span
-    class="status"
-    style={"position":"absolute","right":"0","bottom":"0","left":"0","paddingTop":"0.5rem","paddingBottom":"0.5rem","textAlign":"center","color":"#ffffff","backgroundColor":"#000000","transitionProperty":"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform","transitionTimingFunction":"cubic-bezier(0.4, 0, 0.2, 1)","transitionDuration":"300ms","--transform-translate-y":"100%"}
+    class="status" style="display:none"
+    // style={"position":"relative","right":"0","bottom":"0","left":"0","display":"none"}
     >Add To Cart</span
   >
 </div>
@@ -172,8 +157,8 @@ function addToCart(e) {
         // Add to cart
         statusEl.classList.add('added');
         statusEl.innerText = 'Remove From Cart';
-       /* statusEl.classList.remove('bg-gray-800');
-        statusEl.classList.add('bg-red-600');*/
+        /* statusEl.classList.remove('bg-gray-800');
+         statusEl.classList.add('bg-red-600');*/
         statusEl.classList.remove("isolated_item_style_bg_gray_800");
         statusEl.classList.add("isolated_item_style_bg_red_600");
 
