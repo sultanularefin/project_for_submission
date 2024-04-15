@@ -229,7 +229,7 @@ function insert_item_to_cart(eventTarget,item) {
             if (!all_cart_items) {
 
 
-                // JSON.stringify(item)
+
                 localStorage.setItem('carts',JSON.stringify([item]));
 
                 // return;
@@ -241,8 +241,6 @@ function insert_item_to_cart(eventTarget,item) {
                 all_cart_items_with_previous_data.push(item);
 
                 localStorage.setItem('carts',JSON.stringify(all_cart_items_with_previous_data));
-
-                // localStorage.setItem('carts', JSON.stringify(driver_vault));
 
             }
         }

@@ -25,10 +25,59 @@
 }
 
 /*ecommerce_container*/
-.cart_root_container > nav {
-    position: sticky;
-    top: 0;
-    background-color: cornflowerblue;
-    z-index: 1;
+.cart_root_container > div {
+
+    width: 100%;
+    height: 80%;
+    /*background-color: tomato;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
+.cart_root_container > div > div {
+    /*this is master row div*/
+    text-align: left;
+    width: calc(50%);
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cart_root_container > div > div > div.column_in_row_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: gold;*/
+}
+
+.cart_root_container > div > div > div.column_in_row_div > span {
+    text-align: left;
+    width: calc(90%);
+    /*background-color: gold;*/
+}
+
+
+.cart_root_container > div > div > div.delete_button button {
+    /*text-align: left;*/
+    /*width: calc(90%);*/
+    background-color: cyan;
+}
+
+
+
+/*.cart_root_container > div > div > div > .column_in_row_div {
+    !*background-color: gold;*!
+}*/
+
+.cart_root_container > div > div > div> image {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+}
+
+

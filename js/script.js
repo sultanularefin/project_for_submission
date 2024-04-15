@@ -138,33 +138,17 @@ const check_local_storage = ()=>{
 
         if(user_data.email.trim()!==""){
 
-
-
             const account_BTN= document.getElementById("account_button");
-
-
-
 
             account_BTN.style.display = "inline";
 
             console.log("account_BTN inline");
 
-
-
             const logout_BTN= document.getElementById("logout_button");
 
             console.log("logout_BTN inline");
-            // to clear the previous search
-            // delete_BTN.textContent="Log out";
+
             logout_BTN.style.display = "inline";
-
-
-
-
-            /*  account_button
-              logout_button*/
-
-
 
         }
 
@@ -175,10 +159,8 @@ const check_local_storage = ()=>{
 
         const login_BTN= document.getElementById("login_button");
 
-
         console.log("login_BTN inline");
-        // to clear the previous search
-        // delete_BTN.textContent="Log out";
+
         login_BTN.style.display = "inline";
 
     }
@@ -192,7 +174,7 @@ const main = async () => {
 
     populate_profile_button();
 
-    
+
 }
 main();
 
