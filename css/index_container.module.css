@@ -201,8 +201,8 @@
 
 .single_item_outer_div{
     margin-top: 0.5rem;
-    border-width: 1px;
-    border-width: 4px;
+    /*border-width: 1px;*/
+    /*border-width: 4px;*/
     /*margin-top: 0.5rem;*/
 
 }
@@ -219,44 +219,36 @@
     overflow: hidden;
     position: relative;
     justify-content: center;
-/*
-    background-color: #F3F4F6;*/
     cursor: pointer;
-
-    background-color: #F3F4F6;
-  /*  display: flex;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    border-width: 4px;
-
-    cursor: pointer;*/
+    background-color: red;
     border-radius: 5px;
     border-color: blue;
     border-width: 2px;
-    /*borderColor:blue*/
-
-
-    /*  display: flex;
-      overflow: hidden;
-      position: relative;
-      justify-content: center;
-      border-width: 1px;
-      background-color: #F3F4F6;
-      cursor: pointer;
-  */
-
-
-
-
-
-
-
-
+    /*width: calc(99%);*/
+    /*height: calc(99%);*/
 }
-.single_item :hover {
 
+.single_item:hover {
+    /*height : 320px;*/
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    cursor: pointer;
+    background-color: lemonchiffon;
+    border-radius: 5px;
+    border-color: blue;
+    border-width: 2px;
+    /*--transform-translate-y: 0;*/
+}
+
+
+.single_item > span.status{
+
+    background-color: teal;
     position: absolute;
+    visibility : hidden;
+
     right: 0;
     bottom: 0;
     left: 0;
@@ -264,12 +256,31 @@
     padding-bottom: 0.5rem;
     text-align: center;
     color: #ffffff;
-    background-color: #000000;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+
+}
+
+.single_item:hover > span.status{
+    background-color: blueviolet;
+    position: absolute;
+    visibility : visible;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    color: #ffffff;
+    /*background-color: #000000;*/
+   /* transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
     --transform-translate-y: 100%;
+    margin-top : 30px;*/
+    /*visibility : visible;*/
+    /*opacity : 1;
+    transition-delay: 0.2s;*/
 }
+
 
 .image_style{
     object-fit: cover;
@@ -277,21 +288,6 @@
     height: 100%;
 }
 
-/*.span_text_style{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    text-align: center;
-    color: #ffffff;
-    background-color: #000000;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    --transform-translate-y: 100%;
-}*/
 
 
 .single_item > image{
@@ -299,22 +295,6 @@
     width: 100%;
     height: 100%;
 }
-/*.single_item > span{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    text-align: center;
-    color: #ffffff;
-    background-color: #000000;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    --transform-translate-y: 100%;
-
-}*/
 
 
 .isolated_item_style_bg_red_600{

@@ -111,7 +111,7 @@ function createProductElement(product) {
     border-width: 4px;*/
     // "marginTop":"0.5rem"
     productEl.className = 'item';
-    productEl.style= "marginTop:0.1rem;"
+    // productEl.style= "marginTop:0.1rem;"
     productEl.innerHTML = `<div
     className="group"
    class="single_item"
@@ -122,7 +122,7 @@ function createProductElement(product) {
     class="image_style"
   />
   <span
-    class="status" style="display:none"
+    class="status"    
     // style={"position":"relative","right":"0","bottom":"0","left":"0","display":"none"}
     >Add To Cart</span
   >
