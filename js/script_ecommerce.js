@@ -1,71 +1,83 @@
 const products = [
     {
+        index: 0,
         name: 'Sony Playstation 5',
         url: 'images/playstation_5.png',
         type: 'games',
         price: 499.99,
     },
     {
+        index: 1,
         name: 'Samsung Galaxy',
         url: 'images/samsung_galaxy.png',
         type: 'smartphones',
         price: 399.99,
     },
     {
+        index: 2,
         name: 'Cannon EOS Camera',
         url: 'images/cannon_eos_camera.png',
         type: 'cameras',
         price: 749.99,
     },
     {
+        index: 3,
         name: 'Sony A7 Camera',
         url: 'images/sony_a7_camera.png',
         type: 'cameras',
         price: 1999.99,
     },
     {
+        index: 4,
         name: 'LG TV',
         url: 'images/lg_tv.png',
         type: 'televisions',
         price: 799.99,
     },
     {
+        index: 5,
         name: 'Nintendo Switch',
         url: 'images/nintendo_switch.png',
         type: 'games',
         price: 299.99,
     },
     {
+        index: 6,
         name: 'Xbox Series X',
         url: 'images/xbox_series_x.png',
         type: 'games',
         price: 499.99,
     },
     {
+        index: 7,
         name: 'Samsung TV',
         url: 'images/samsung_tv.png',
         type: 'televisions',
         price: 1099.99,
     },
     {
+        index: 8,
         name: 'Google Pixel',
         url: 'images/google_pixel.png',
         type: 'smartphones',
         price: 499.99,
     },
     {
+        index: 9,
         name: 'Sony ZV1F Camera',
         url: 'images/sony_zv1f_camera.png',
         type: 'cameras',
         price: 799.99,
     },
     {
+        index: 10,
         name: 'Toshiba TV',
         url: 'images/toshiba_tv.png',
         type: 'televisions',
         price: 499.99,
     },
     {
+        index: 11,
         name: 'iPhone 14',
         url: 'images/iphone_14.png',
         type: 'smartphones',
@@ -130,7 +142,17 @@ function createProductElement(product) {
 <p class={"fontSize":"1.25rem","lineHeight":"1.75rem"}>${product.name}</p>
 <strong>$${product.price.toLocaleString()}</strong>`;
 
-    productEl.querySelector('.status').addEventListener('click', addToCart);
+    // productEl.querySelector('.status').addEventListener('click', addToCart_item_style_update);
+
+    /*document.getElementById("myBtn").addEventListener("click", function() {
+        myFunction(p1, p2);
+    });*/
+
+    productEl.querySelector('.status').addEventListener("click", function() {
+
+        console.log("event.target: ",event.target);
+        insert_item_to_cart(event.target,product);
+    });
 
     return productEl;
 
@@ -139,34 +161,117 @@ function createProductElement(product) {
 
 }
 
-// Toggle add/remove from cart
-function addToCart(e) {
-    const statusEl = e.target;
+
+function insert_item_to_cart(eventTarget,item) {
+
+    console.log('item : ',item);
+    // const statusEl = e.target;
+
+
+    console.log('e : ',eventTarget);
+    const statusEl = eventTarget;
 
     if (statusEl.classList.contains('added')) {
         // Remove from cart
         statusEl.classList.remove('added');
         statusEl.innerText = 'Add To Cart';
-        // statusEl.classList.remove('bg-red-600');
-        statusEl.classList.remove("isolated_item_style_bg_red_600");
 
-        statusEl.classList.add("isolated_item_style_bg_gray_800");
+
+        // ---localStorage operation begins here
+
+
+        if ((typeof window !== "undefined") && window.localStorage) {
+
+            const all_cart_items = localStorage.getItem('carts');
+            if (!all_cart_items) {
+
+
+
+                console.log("shouldn't come to this condition, check for errors");
+
+            } else {
+
+                const all_cart_items_with_previous_data = JSON.parse(all_cart_items);
+
+
+                const new_cart_items_after_removing_current_item = all_cart_items_with_previous_data.filter((one_product,index)=>(
+                    one_product.index !==item.index
+
+                ));
+                // all_cart_items_with_previous_data.push(item);
+
+                console.log("new_cart_items_after_removing_current_item: ",new_cart_items_after_removing_current_item);
+
+                localStorage.setItem('carts',JSON.stringify(new_cart_items_after_removing_current_item));
+
+                // localStorage.setItem('carts', JSON.stringify(driver_vault));
+
+            }
+        }
+
+
+        // localStorage operation ends here
+
 
         cartItemCount--;
     } else {
         // Add to cart
         statusEl.classList.add('added');
         statusEl.innerText = 'Remove From Cart';
-        /* statusEl.classList.remove('bg-gray-800');
-         statusEl.classList.add('bg-red-600');*/
-        statusEl.classList.remove("isolated_item_style_bg_gray_800");
-        statusEl.classList.add("isolated_item_style_bg_red_600");
+
+
+        // ---localStorage operation begins here
+
+
+        if ((typeof window !== "undefined") && window.localStorage) {
+
+            const all_cart_items = localStorage.getItem('carts');
+            if (!all_cart_items) {
+
+
+                // JSON.stringify(item)
+                localStorage.setItem('carts',JSON.stringify([item]));
+
+                // return;
+            } else {
+                console.log("all_cart_items found",)
+                const all_cart_items_with_previous_data = JSON.parse(all_cart_items);
+                console.log("all_cart_items_with_previous_data", all_cart_items_with_previous_data);
+
+                all_cart_items_with_previous_data.push(item);
+
+                localStorage.setItem('carts',JSON.stringify(all_cart_items_with_previous_data));
+
+                // localStorage.setItem('carts', JSON.stringify(driver_vault));
+
+            }
+        }
+
+
+        // localStorage operation ends here
 
         cartItemCount++;
+
+        // Update cart item count
+        cartCount.innerText = cartItemCount.toString();
     }
 
-    // Update cart item count
-    cartCount.innerText = cartItemCount.toString();
+
+
+
+
+
+}
+
+
+const cartButton_Pressed =()=>{
+
+    console.log("at here <<cartButton_Pressed>>");
+    window.location.href = "./cart_page.html";
+
+// Simulate an HTTP redirect:
+//         window.location.replace("./cart_page.html");
+
 }
 
 // Filter products by search or checkbox
