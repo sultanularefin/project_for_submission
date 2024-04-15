@@ -100,27 +100,14 @@ searchInput.addEventListener('input', filterProducts);
 
 // Create product element
 function createProductElement(product) {
-    const productEl = document.createElement('div');
-
-    // productEl.className = 'item space-y-2';
-
-    productEl.style="height: 250px; marginTop:0.5rem; "
-     // "marginTop":"0.5rem", "height":"250px"}
-
-    productEl.innerHTML = `<div
-style="display:flex;height:250px; overflow:hidden; position:relative; justifyContent: center; borderWidth: 1px; backgroundColor : #F3F4F6; cursor : pointer;"}
->
+/*    const productEl = document.createElement('div');
+    productEl.innerHTML = `<div>
   <img
     src="${product.url}"
     alt="${product.name}"
   
-    style="objectFit:cover; width:100%; height: 100%;"}
   />
-  <span 
-    // class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0"
-    style="position:absolute; right:0; bottom:0;left:0; paddingTop:0.5rem; paddingBottom: 0.5rem; textAlign:center; color :#ffffff; backgroundColor:#000000; transitionProperty:background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; transitionTimingFunction:cubic-bezier(0.4, 0, 0.2, 1);transitionDuration:300ms; --transform-translate-y:100%;"}
-    >Add To Cart</span
-  >
+  <span>Add To Cart</span>
 </div>
 <p
  // class="text-xl"
@@ -131,7 +118,40 @@ ${product.name}</p>
 
     productEl.querySelector('.status').addEventListener('click', addToCart);
 
+    return productEl;*/
+
+
+
+    const productEl = document.createElement('div');
+
+    // productEl.className = 'item space-y-2';
+    // productEl.className= "single_item_outer_div"
+
+    productEl.style= "marginTop:0.5rem"
+    productEl.innerHTML = `<div
+  class="single_item"
+>
+  <img
+    src="${product.url}"
+    alt="${product.name}"
+    class="image_style"
+  />
+  <span
+    class="status"
+    style={"position":"absolute","right":"0","bottom":"0","left":"0","paddingTop":"0.5rem","paddingBottom":"0.5rem","textAlign":"center","color":"#ffffff","backgroundColor":"#000000","transitionProperty":"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform","transitionTimingFunction":"cubic-bezier(0.4, 0, 0.2, 1)","transitionDuration":"300ms","--transform-translate-y":"100%"}
+    >Add To Cart</span
+  >
+</div>
+<p class={"fontSize":"1.25rem","lineHeight":"1.75rem"}>${product.name}</p>
+<strong>$${product.price.toLocaleString()}</strong>`;
+
+    productEl.querySelector('.status').addEventListener('click', addToCart);
+
     return productEl;
+
+
+
+
 }
 
 // Toggle add/remove from cart

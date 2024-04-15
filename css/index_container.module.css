@@ -147,6 +147,8 @@ transitionDuration":"300ms"*/
 
 .single_item_outer_div{
 margin-top: 0.5rem;
+    /*margin-top: 0.5rem;*/
+
 }
 
 
@@ -165,7 +167,47 @@ margin-top: 0.5rem;
     background-color: #F3F4F6;
     cursor: pointer;
 
+  /*  display: flex;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    border-width: 1px;
+    background-color: #F3F4F6;
+    cursor: pointer;
+*/
+
+
+
+
+
+
+
+
 }
+
+
+.image_style{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.span_text_style{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    --transform-translate-y: 100%;
+}
+
 
 .single_item > image{
     object-fit: cover;
@@ -188,6 +230,9 @@ margin-top: 0.5rem;
     --transform-translate-y: 100%;
 
 }
+
+
+
 
 
 
