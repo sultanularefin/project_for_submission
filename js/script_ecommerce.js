@@ -106,6 +106,40 @@ products.forEach((product) => {
     productsWrapperEl.appendChild(productEl);
 });
 
+
+
+const populate_cartItemCount =()=>{
+    console.log("at <<populate_cartItemCount>>");
+
+    if ((typeof window !== "undefined")
+        &&
+        (window.localStorage)
+        && (localStorage.getItem('carts') !== null) &&
+        (localStorage.getItem('carts') !== undefined)) {
+
+
+        all_cart_items = JSON.parse(localStorage.getItem('carts'));
+
+        if (all_cart_items.length > 0) {
+            cartItemCount = all_cart_items.length;
+
+        }
+        else{
+
+            cartItemCount = 0;
+        }
+    }else{
+
+        console.log("carts undefined");
+        cartItemCount = 0;
+    }
+    cartCount.innerText = cartItemCount.toString();
+
+}
+
+populate_cartItemCount();
+// cartItemCount
+
 // Add filter event listeners
 filtersContainer.addEventListener('change', filterProducts);
 searchInput.addEventListener('input', filterProducts);

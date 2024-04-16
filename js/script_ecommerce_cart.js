@@ -16,9 +16,30 @@ const deleteButtonClick66=(item)=> {
 
 
 // Function to handle the click event with parameters
-function deleteButtonClick99(parameter1) {
-    console.log('Delete button clicked with parameters: ', parameter1 );
+function deleteButtonClick99(item) {
+    console.log('Delete button clicked with parameters: ', item );
     // You can perform delete operation or any other action here with the parameters
+
+
+
+
+    const new_cart_items_after_removing_current_item = all_cart_items.filter((one_product,index)=>(
+        one_product.index !==item.index
+
+    ));
+    // all_cart_items_with_previous_data.push(item);
+
+    // console.log("new_cart_items_after_removing_current_item: ",new_cart_items_after_removing_current_item);
+
+    all_cart_items = new_cart_items_after_removing_current_item;
+
+    localStorage.setItem('carts',JSON.stringify(new_cart_items_after_removing_current_item));
+
+
+    window.location.href = "./cart_page.html";
+
+
+
 }
 
 // Function to create a closure that captures parameters
@@ -44,7 +65,7 @@ const check_cart_storage = ()=> {
         if (all_cart_items.length > 0) {
 
 
-            var ol_Div = document.getElementById('myList');
+            const ol_Div = document.getElementById('myList');
 
 
            /* function deleteButtonClick55(item) {
@@ -58,7 +79,7 @@ const check_cart_storage = ()=> {
             // Loop through the items array and create list items
             all_cart_items.forEach(function(itemText,index) {
                 // Create a new list item element
-                var list_item_Master_row_div = document.createElement('div');
+                const list_item_Master_row_div = document.createElement('div');
 
 
                 // Set the text content of the list item
@@ -67,16 +88,16 @@ const check_cart_storage = ()=> {
 
 
 
-                var imageContainer = document.createElement('div');
+                const imageContainer = document.createElement('div');
 
                 // URL of the image
-                var imageUrl = itemText.url;
+                const imageUrl = itemText.url;
 
                 // Alt text for the image
-                var altText =  itemText.name;
+                const altText =  itemText.name;
 
                 // Create the img element
-                var imgElement = document.createElement('img');
+                const imgElement = document.createElement('img');
 
                 // Set the src and alt properties
                 imgElement.src = imageUrl;
@@ -94,14 +115,14 @@ const check_cart_storage = ()=> {
 
 
                 // price, type begins here
-                var price_type_column_Container = document.createElement('div');
+                const price_type_column_Container = document.createElement('div');
 
 
                 price_type_column_Container.classList.add('column_in_row_div');
 
                 // Create the img element
-                var price_Element = document.createElement('span');
-                // var type_Element = document.createElement('span');
+                const price_Element = document.createElement('span');
+                // const type_Element = document.createElement('span');
 
                 // Set the src and alt properties
                 price_Element.textContent =  `Price: ${itemText.price}`;
@@ -114,7 +135,7 @@ const check_cart_storage = ()=> {
 
 
                 // delete button begins here
-                var delete_button_Container = document.createElement('div');
+                const delete_button_Container = document.createElement('div');
 
 
 
@@ -123,7 +144,7 @@ const check_cart_storage = ()=> {
                 // Function to handle the click event
 
                 // Create the button element
-                var deleteButton = document.createElement('button');
+                const deleteButton = document.createElement('button');
                 deleteButton.classList.add('delete-button');
                 deleteButton.textContent = 'Delete'; // Text for the button
 
@@ -133,7 +154,7 @@ const check_cart_storage = ()=> {
 
 
                 // Create the SVG element
-                var svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                 svgElement.setAttribute("width", "24");
                 svgElement.setAttribute("height", "24");
                 svgElement.setAttribute("viewBox", "0 0 24 24");
@@ -144,7 +165,7 @@ const check_cart_storage = ()=> {
                 svgElement.setAttribute("stroke-linejoin", "round");
 
                 // Create the path element inside the SVG
-                var pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
                 pathElement.setAttribute("d", "M3 3l18 18M3 21l18-18");
 
                 // Append the path element to the SVG
@@ -180,7 +201,13 @@ const check_cart_storage = ()=> {
 
         } else {
             console.log("no item found in cart");
+            const ol_Div = document.getElementById('myList');
+            const list_item_Master_row_div = document.createElement('div');
 
+
+            // Set the text content of the list item
+            list_item_Master_row_div.textContent = `No Item Found in Cart.`;
+            ol_Div.appendChild(list_item_Master_row_div);
 
         }
     }
