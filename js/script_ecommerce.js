@@ -83,6 +83,13 @@ const products = [
         type: 'smartphones',
         price: 999.99,
     },
+    {
+        index: 12,
+        name: 'iPhone 15 Pro max',
+        url: 'images/apple-iphone-15-pro-max-1.jpg',
+        type: 'smartphones',
+        price: 987.99,
+    },
 ];
 
 // Get DOM elements

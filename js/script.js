@@ -12,17 +12,7 @@ $(window).scroll(function () {
 });*/
 
 
-const loadPosts = async(searchText) =>{
-    const url=`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    // console.log(data);   //all post objects
 
-    const postArr= data.posts;
-    // console.log(postArr);    //all posts array
-    displayPosts(postArr);
-
-}
 
 const logout_button_pressed = ()=>{
 
